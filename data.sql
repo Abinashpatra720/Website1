@@ -40,7 +40,7 @@ INSERT INTO `user_info` (`name`, `email`, `address`) VALUES
 ('', '', ''),
 ('Abinash batra', 'abitask16@gmail.com', 'cuttack'),
 ('Abinash Das', 'abitask16@gmail.com', 'cuttack'),
-('Abinash gsgsgs', 'abitask16@gmail.com', 'cuttack'),
+('Abinash ', 'abitask16@gmail.com', 'cuttack'),
 ('Abinash Kohli', 'abitask16@gmail.com', 'cuttack'),
 ('Abinash Kumar', 'abitask16@gmail.com', 'cuttack'),
 ('Abinash Patra', 'abitask16@gmail.com', 'cuttack');

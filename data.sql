@@ -38,12 +38,12 @@ CREATE TABLE `user_info` (
 
 INSERT INTO `user_info` (`name`, `email`, `address`) VALUES
 ('', '', ''),
-('Abinash batra', 'abitask16@gmail.com', 'D-916,Cda-6,markatnagar,cuttack'),
-('Abinash Das', 'abitask16@gmail.com', 'D-916,Cda-6,markatnagar,cuttack'),
-('Abinash gsgsgs', 'abitask16@gmail.com', 'D-916,Cda-6,markatnagar,cuttack'),
-('Abinash Kohli', 'abitask16@gmail.com', 'D-916,Cda-6,markatnagar,cuttack'),
-('Abinash Kumar', 'abitask16@gmail.com', 'D-916,Cda-6,markatnagar,cuttack'),
-('Abinash Patra', 'abitask16@gmail.com', 'D-916,Cda-6,markatnagar,cuttack');
+('Abinash batra', 'abitask16@gmail.com', 'cuttack'),
+('Abinash Das', 'abitask16@gmail.com', 'cuttack'),
+('Abinash gsgsgs', 'abitask16@gmail.com', 'cuttack'),
+('Abinash Kohli', 'abitask16@gmail.com', 'cuttack'),
+('Abinash Kumar', 'abitask16@gmail.com', 'cuttack'),
+('Abinash Patra', 'abitask16@gmail.com', 'cuttack');
 
 --
 -- Indexes for dumped tables

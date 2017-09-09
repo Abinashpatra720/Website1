@@ -1,6 +1,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css\bootstrap.min.css">
+<script src="js/jquery-3.2.1.js">
+</script>
 <style>
 
 *{
@@ -30,24 +32,81 @@ if (fadeArray.length) setTimeout ('fadeIn()', 500);
 onload = fadeIn
 // -->
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $("#name").keyup(function(){
+        var key=this.value;
+        $.ajax({
+          type:"GET",
+          url:"hint.php",
+          data:"name="+key,
+          success:function(res){
+            $("#name_suggest").text(res);
+            $("#suggest").css("display","block");
+          }
+        });
+      });
+
+      $("#address").keyup(function(){
+        var add=this.value;
+        $.ajax({
+          type:"GET",
+          url:"hint.php",
+          data:"address="+add,
+          success:function(result){
+            $("#add_suggest").text(result);
+            $("#suggest_add").css("display","block");
+          }
+        });
+      });
+
+      $("#name").blur(function(){
+        $("#name_suggest").text("");
+        $("#suggest").css("display","none");
+      });
+
+      $("#address").blur(function(){
+        $("#add_suggest").text("");
+        $("#suggest_add").css("display","none");
+      })
+    });
+</script>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
 <div class="container mt-3">
 <form  method="POST" action="submit.php">
+<div class="row">
  <div class="form-group col-md-6">
     <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" aria-describedby="name_suggest" autocomplete="off">
+     </div>
+     <div class="col-md-6">
+     <label for="name_suggest" id="suggest" style="display: none;">Found suggestions:</label>
+    <small class="form-text" id="name_suggest"></small>
+ </div>
   </div>
+  <div class="row">
   <div class="form-group col-md-6">
     <label for="email">Email:</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" autocomplete="off">
   </div>
+  </div>
+  <div class="row">
   <div class="form-group col-md-6">
     <label for="address">Address:</label>
-    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Your Address">
+    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Your Address" aria-describedby="add_suggest" autocomplete="off">
+    </div>
+    <div class="col-md-6">
+    <label for="add_suggest" id="suggest_add" style="display: none;">Found suggestions:</label>
+    <small class="form-text" id="add_suggest"></small>
+    </div>
   </div>
-  <div class="form-group col-md-6">
+
+  <div class="row">
+  <div class="form-group col-md-4">
     <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+  </div>
   </div>
 </form>
 <hr class="mt-3">
